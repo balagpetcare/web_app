@@ -1,3 +1,5 @@
+import "@/src/styles/landing.css";
+import "@/src/styles/producer-landing.css";
 import HeroSection from "./_components/HeroSection";
 import TrustSection from "./_components/TrustSection";
 import EcosystemSection from "./_components/EcosystemSection";
@@ -17,7 +19,11 @@ const isProducerMode = process.env.SITE_MODE === "producer";
 
 export default function PublicLandingPage() {
   if (isProducerMode) {
-    return <ProducerLandingPage />;
+    return (
+      <div className="landing producer-landing pl-v2">
+        <ProducerLandingPage />
+      </div>
+    );
   }
   return (
     <>

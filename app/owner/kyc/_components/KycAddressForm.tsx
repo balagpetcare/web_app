@@ -47,7 +47,6 @@ export default function KycAddressForm({
       const merged: InternationalAddress = {
         countryCode: "BD",
         countryName: "Bangladesh",
-        addressLine1: " ",
         latitude: 0,
         longitude: 0,
         ...base,

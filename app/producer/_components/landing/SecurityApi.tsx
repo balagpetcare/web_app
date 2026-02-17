@@ -3,22 +3,28 @@
 export default function SecurityApi() {
   return (
     <section id="security-api" className="pl-section pl-security" aria-labelledby="pl-security-title">
-      <h2 id="pl-security-title" className="pl-security-title">SECURITY & API</h2>
+      <div className="pl-container">
+        <div className="pl-security-title-wrap">
+          <span className="pl-security-title-line" aria-hidden />
+          <h2 id="pl-security-title" className="pl-security-title">SECURITY & API</h2>
+          <span className="pl-security-title-line pl-security-title-line--right" aria-hidden />
+        </div>
+      </div>
       <div className="pl-container pl-security-inner">
         <div className="pl-security-panel">
           <div className="pl-security-row">
             <button type="button" className="pl-security-icon-btn" aria-label="Token list">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width={20} height={20}><path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
-            <input type="text" readOnly value="T00012345678" className="pl-security-input" aria-label="Serial / Token" />
-            <button type="button" className="pl-security-btn pl-security-btn--primary">
-              Generate
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width={16} height={16}><path d="M12 5v14M5 12h14" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </button>
+            <input type="text" readOnly value="T00012345678" className="pl-security-input" aria-label="API key" />
+            <span className="pl-security-active-pill">Active</span>
           </div>
           <div className="pl-security-row pl-security-row--bottom">
             <div className="pl-security-status" aria-hidden>
-              <span className="pl-security-status-icon" />
+              <span className="pl-security-status-caret">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width={14} height={14}><path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </span>
+              <span className="pl-security-status-num">1</span>
               <span className="pl-security-status-bars" />
             </div>
             <div className="pl-security-toggle-wrap">

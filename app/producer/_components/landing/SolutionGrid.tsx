@@ -5,7 +5,7 @@ const solutions = [
   { title: "QR Label Printing", sub: "Secure, high-quality label integration.", icon: "printer" },
   { title: "Consumer Verification Page", sub: "Branded public scan results.", icon: "phone" },
   { title: "Duplicate Scan Alerts", sub: "Instant notifications for suspicious activity.", icon: "megaphone" },
-  { title: "Factory Tracking", sub: "Monitor production and delivery.", icon: "factory" },
+  { title: "Factory Tracking", sub: "Monitor production and distribution.", icon: "factory" },
   { title: "Analytics Dashboard", sub: "Actionable insights and reporting.", icon: "chart" },
 ];
 

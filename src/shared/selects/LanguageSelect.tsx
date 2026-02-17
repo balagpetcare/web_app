@@ -12,8 +12,8 @@ export const LOCALE_TO_FLAG_COUNTRY: Record<string, string> = {
   bn: "BD",
 };
 
-export interface LanguageOption {
-  locale: string;
+export interface LanguageOption<TLocale extends string = string> {
+  locale: TLocale;
   label: string;
   /** Country code for flag (defaults from LOCALE_TO_FLAG_COUNTRY) */
   countryCode?: string;
@@ -24,11 +24,11 @@ const DEFAULT_LANGUAGES: LanguageOption[] = [
   { locale: "bn", label: "বাংলা", countryCode: "BD" },
 ];
 
-export interface LanguageSelectProps {
-  value: string;
-  onChange: (locale: string) => void;
+export interface LanguageSelectProps<TLocale extends string = string> {
+  value: TLocale;
+  onChange: (locale: TLocale) => void;
   /** Override default en/bn options */
-  options?: LanguageOption[];
+  options?: LanguageOption<TLocale>[];
   label?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -42,17 +42,17 @@ export interface LanguageSelectProps {
  * Language/locale select with flag emoji on every option.
  * Default: en (US flag), bn (BD flag). Value is locale code.
  */
-export default function LanguageSelect({
+export default function LanguageSelect<TLocale extends string = string>({
   value,
   onChange,
-  options = DEFAULT_LANGUAGES,
+  options = DEFAULT_LANGUAGES as unknown as LanguageOption<TLocale>[],
   label,
   placeholder = "Select language...",
   disabled = false,
   error,
   onBlur,
   compact = false,
-}: LanguageSelectProps) {
+}: LanguageSelectProps<TLocale>) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +71,7 @@ export default function LanguageSelect({
   }, [onBlur]);
 
   const handleSelect = useCallback(
-    (locale: string) => {
+    (locale: TLocale) => {
       onChange(locale);
       setOpen(false);
     },

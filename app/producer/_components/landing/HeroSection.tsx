@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const VIDEO_SRC = "/landing/videos/producer-hero.mp4"; // <-- আপনার ভিডিও path দিন
-
 export default function HeroSection() {
   return (
     <section id="top" className="pl-hero" aria-labelledby="pl-hero-title">
@@ -30,24 +28,27 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT SIDE VISUAL */}
-        <div className="pl-hero-visual" aria-hidden>
-          {/* Video Card */}
-          <div className="pl-hero-video">
-            <video
-              className="pl-hero-video-el"
-              src={VIDEO_SRC}
+     {/* Video Section */}
+     <div className="jamina-hero-visual relative overflow-hidden rounded-2xl">
+          <div className="jamina-hero-mockup relative">
+          <video
+              className="w-full h-full object-cover rounded-2xl"
+              src="/landing/videos/producer-hero.mp4"
+              title="Producer Demo Video"
+              aria-label="Producer Demo Video"
+
               autoPlay
-              loop
               muted
-              controls
+              loop
               playsInline
+              controls
               preload="metadata"
             />
-          </div>
 
-       
+        
+          </div>
         </div>
+    
       </div>
     </section>
   );

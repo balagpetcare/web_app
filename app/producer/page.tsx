@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ProducerPage() {
   return (
-    <div className="landing producer-landing">
+    <div className="landing producer-landing pl-v2">
       <ProducerLandingPage />
     </div>
   );

@@ -14,9 +14,9 @@ export default function LiveDemo() {
                   <div className="pl-demo-product-scan" />
                 </div>
                 <div className="pl-demo-meta">
-                  <div><span className="pl-demo-label">Name</span><span className="pl-demo-value">Premium W... Model X</span></div>
+                  <div><span className="pl-demo-label">Name</span><span className="pl-demo-value">Premium Watch Model X</span></div>
                   <div><span className="pl-demo-label">Status</span><span className="pl-demo-value pl-demo-value--green">Authentic</span></div>
-                  <div><span className="pl-demo-label">Scan Time</span><span className="pl-demo-value">Just now</span></div>
+                  <div><span className="pl-demo-label">Scan Time</span><span className="pl-demo-value">Just Now</span></div>
                   <div><span className="pl-demo-label">Location</span><span className="pl-demo-value">New York, USA</span></div>
                 </div>
               </div>
@@ -46,9 +46,9 @@ export default function LiveDemo() {
                   <div className="pl-demo-product-scan" />
                 </div>
                 <div className="pl-demo-meta">
-                  <div><span className="pl-demo-label">Status</span><span className="pl-demo-value pl-demo-value--red">Duplicate / Potential Fraud</span></div>
+                  <div><span className="pl-demo-label">Name</span><span className="pl-demo-value pl-demo-value--red">Duplicate / Potential Fraud</span></div>
                   <div><span className="pl-demo-label">Warning</span><span className="pl-demo-value pl-demo-value--red pl-demo-warn-text">This item has been scanned multiple times from different locations!</span></div>
-                  <div><span className="pl-demo-label">Scan Time</span><span className="pl-demo-value">Just now</span></div>
+                  <div><span className="pl-demo-label">Scan Time</span><span className="pl-demo-value">Just Now</span></div>
                   <div><span className="pl-demo-label">Location</span><span className="pl-demo-value">Shanghai, China</span></div>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ProducerHeader from "./ProducerHeader";
+import ProducerLandingSidebar from "./ProducerLandingSidebar";
 import GoToTopButton from "@/app/(public)/_components/GoToTopButton";
 import ProducerDesignMockupSection, { type LandingMode } from "./ProducerDesignMockupSection";
 import {
@@ -12,6 +13,8 @@ import {
   SolutionGrid,
   HowItWorks,
   LiveDemo,
+  SolutionRow,
+  HowItWorksShowcase,
   SecurityApi,
   FinalCTA,
 } from "./landing";
@@ -50,25 +53,32 @@ export default function ProducerLandingPage() {
   return (
     <>
       <ProducerHeader />
-      {showMockupSection && (
-        <ProducerDesignMockupSection
-          mode={mode}
-          onLoaded={() => setMockupVisible(true)}
-          onError={() => setMockupVisible(false)}
-        />
-      )}
-      {showSections && (
-        <>
-          <HeroSection />
-          <StatsRow />
-          <ProblemSection />
-          <SolutionGrid />
-          <HowItWorks />
-          <LiveDemo />
-          <SecurityApi />
-          <FinalCTA />
-        </>
-      )}
+      <div className="pl-landing-layout">
+        <ProducerLandingSidebar />
+        <main className="pl-landing-main">
+          {showMockupSection && (
+            <ProducerDesignMockupSection
+              mode={mode}
+              onLoaded={() => setMockupVisible(true)}
+              onError={() => setMockupVisible(false)}
+            />
+          )}
+          {showSections && (
+            <>
+              <HeroSection />
+              <StatsRow />
+              <ProblemSection />
+              <SolutionGrid />
+              <HowItWorks />
+              <LiveDemo />
+              <SolutionRow />
+              <HowItWorksShowcase />
+              <SecurityApi />
+              <FinalCTA />
+            </>
+          )}
+        </main>
+      </div>
       <GoToTopButton />
     </>
   );
