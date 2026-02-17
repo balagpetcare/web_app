@@ -16,6 +16,24 @@
 
 # production
 /build
+/dist
+
+# logs and temp
+/logs
+*.log
+backups/
+
+# archives (do not track)
+*.zip
+*.tar
+*.rar
+
+# vendor / templates
+_vendor_templates/
+
+# env (sensitive)
+.env
+.env.*
 
 # misc
 .DS_Store
