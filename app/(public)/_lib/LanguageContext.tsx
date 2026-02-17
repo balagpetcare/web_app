@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import type { Locale } from "@/src/lib/locale";
 import enMessages from "../_locales/en.json";
 import bnMessages from "../_locales/bn.json";
 
@@ -15,7 +16,7 @@ const messagesMap: Record<string, Record<string, unknown>> = {
   bn: bnMessages as Record<string, unknown>,
 };
 
-export type Locale = "en" | "bn";
+export type { Locale };
 
 type Messages = Record<string, unknown>;
 

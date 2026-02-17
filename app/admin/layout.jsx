@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-import MasterLayout from "@/src/masterLayout/MasterLayout";
+import LarkonMasterLayout from "@/src/masterLayout/LarkonMasterLayout";
 import { apiGet } from "@/lib/api";
 
 export default function AdminLayout({ children }) {
@@ -55,5 +55,5 @@ export default function AdminLayout({ children }) {
     return <>{children}</>;
   }
 
-  return <MasterLayout>{children}</MasterLayout>;
+  return <LarkonMasterLayout>{children}</LarkonMasterLayout>;
 }

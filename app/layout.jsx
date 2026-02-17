@@ -35,9 +35,6 @@ export default async function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/lib/file-upload.css" />
         <link rel="stylesheet" href="/assets/css/lib/audioplayer.css" />
         <link rel="stylesheet" href="/assets/css/lib/animate.min.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
-        <link rel="stylesheet" href="/assets/css/extra.css" />
-        <link rel="stylesheet" href="/assets/css/owner-panel.css" />
       </head>
       <body>
         <I18nWrapper initialLocale={lang}>

@@ -3,14 +3,22 @@
 import { useEffect, useState } from "react";
 
 export type MeResponse = {
-  user?: any;
-  orgMembers?: any[];
+  user?: { id?: string; profile?: { displayName?: string; avatarMedia?: { url?: string } }; auth?: { email?: string; phone?: string } };
+  orgMembers?: unknown[];
   orgId?: number | null;
   branchId?: number | null;
   roles?: string[];
   permissions?: string[];
-  branches?: { id: number; name?: string }[];
-  profile?: any;
+  branches?: { id: number; name?: string; title?: string }[];
+  profile?: { displayName?: string; avatarMedia?: { url?: string } };
+  defaultContext?: { type?: string };
+  contexts?: unknown[];
+  id?: string;
+  owner?: { name?: string };
+  data?: { id?: string; owner?: { name?: string }; profile?: { displayName?: string; avatarMedia?: { url?: string } }; auth?: { email?: string; phone?: string } };
+  auth?: { email?: string; phone?: string };
+  email?: string;
+  phone?: string;
 };
 
 const API_BASE = String(process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000").replace(/\/+$/, "");

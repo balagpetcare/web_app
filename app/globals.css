@@ -6,6 +6,8 @@
   Tailwind: base/components/utilities injected below; preflight disabled in tailwind.config.js
   so existing Bootstrap and custom styles are not overridden.
 */
+/* Larkon dashboard theme — scoped under .larkon-dashboard, does not affect public pages */
+@import "../src/styles/larkon/index.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

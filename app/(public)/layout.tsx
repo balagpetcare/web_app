@@ -74,9 +74,17 @@ export default async function PublicLayout({
     },
   };
 
+  const publicStyles = (
+    <>
+      <link rel="stylesheet" href="/assets/css/style.css" />
+      <link rel="stylesheet" href="/assets/css/extra.css" />
+    </>
+  );
+
   if (siteMode === "producer") {
     return (
       <div className="landing producer-landing">
+        {publicStyles}
         <main id="main-content" role="main">
           {children}
         </main>
@@ -87,6 +95,7 @@ export default async function PublicLayout({
 
   return (
     <div className="landing">
+      {publicStyles}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

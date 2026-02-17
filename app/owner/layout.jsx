@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import MasterLayout from "@/src/masterLayout/MasterLayout";
+import LarkonMasterLayout from "@/src/masterLayout/LarkonMasterLayout";
 import NotificationContainer from "./_components/Notification";
 import {
   normalizeKycStatus,
@@ -130,7 +130,7 @@ export default function OwnerLayout({ children }) {
   return (
     <>
       <NotificationContainer />
-      <MasterLayout>{children}</MasterLayout>
+      <LarkonMasterLayout>{children}</LarkonMasterLayout>
     </>
   );
 }

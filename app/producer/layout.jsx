@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import MasterLayout from "@/src/masterLayout/MasterLayout";
+import LarkonMasterLayout from "@/src/masterLayout/LarkonMasterLayout";
 import { apiGet } from "@/lib/api";
 
 export default function ProducerLayout({ children }) {
@@ -29,5 +29,5 @@ export default function ProducerLayout({ children }) {
   }, [pathname, router, isAuthRoute, isLandingRoute]);
 
   if (isAuthRoute || isLandingRoute) return <>{children}</>;
-  return <MasterLayout>{children}</MasterLayout>;
+  return <LarkonMasterLayout>{children}</LarkonMasterLayout>;
 }

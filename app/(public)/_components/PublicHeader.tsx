@@ -1,15 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useLanguage } from "../_lib/LanguageContext";
 import LanguageSelect from "@/src/shared/selects/LanguageSelect";
+import { parseLocale } from "@/src/lib/locale";
 
 const SCROLL_THRESHOLD = 8;
 
 export default function PublicHeader() {
   const { locale, t, setLocale } = useLanguage();
+  const handleLocaleChange = useCallback(
+    (raw: string) => setLocale(parseLocale(raw)),
+    [setLocale]
+  );
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,7 +50,7 @@ export default function PublicHeader() {
           <div className="jamina-lang-switcher d-flex align-items-center">
             <LanguageSelect
               value={locale}
-              onChange={setLocale}
+              onChange={handleLocaleChange}
               compact
               options={[
                 { locale: "en", label: t("header.langEn"), countryCode: "US" },

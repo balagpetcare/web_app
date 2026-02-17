@@ -35,7 +35,7 @@ const SLOTS_BY_TYPE: Record<KycDocumentType, { slot: KycDocumentSlot; label: str
 const MAX_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
 
-function getDocUrl(doc: { url?: string; media?: { key?: string } } | null): string {
+function getDocUrl(doc: { url?: string; media?: { key?: string } | null } | null): string {
   if (!doc) return "";
   const raw = doc.url || "";
   if (!raw && doc.media?.key) {
@@ -47,7 +47,7 @@ function getDocUrl(doc: { url?: string; media?: { key?: string } } | null): stri
 export interface KycDocumentsFormProps {
   documentType: KycDocumentType;
   onDocumentTypeChange: (t: KycDocumentType) => void;
-  existingDocs: Array< { type: string; url?: string; media?: { key?: string } }>;
+  existingDocs: Array<{ type: string; url?: string; media?: { key?: string } | null }>;
   onUploadComplete: () => void;
   disabled?: boolean;
 }

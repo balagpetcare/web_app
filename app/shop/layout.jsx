@@ -1,5 +1,5 @@
-import MasterLayout from "@/src/masterLayout/MasterLayout";
+import LarkonMasterLayout from "@/src/masterLayout/LarkonMasterLayout";
 
 export default function ShopLayout({ children }) {
-  return <MasterLayout>{children}</MasterLayout>;
+  return <LarkonMasterLayout>{children}</LarkonMasterLayout>;
 }
